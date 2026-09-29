@@ -1,0 +1,2 @@
+Average positive: 20
+Average negative: -20
