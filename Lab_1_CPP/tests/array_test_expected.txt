@@ -1,0 +1,2 @@
+Array size: 5
+Array elements: 10 20 30 40 50
