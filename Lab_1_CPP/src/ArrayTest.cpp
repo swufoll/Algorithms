@@ -3,7 +3,8 @@
 
 using namespace std;
 
-int main() {
+int main()
+{
     Array arr(5);
 
     arr[0] = 10;
@@ -15,10 +16,8 @@ int main() {
     cout << "Array size: " << arr.getSize() << endl;
     cout << "Array elements: ";
 
-    for (int i = 0; i < arr.getSize(); i++) {
+    for (int i = 0; i < arr.getSize(); i++)
         cout << arr[i] << " ";
-    }
 
     cout << endl;
-
 }

@@ -1,30 +1,36 @@
 #ifndef ARRAY_H
 #define ARRAY_H
 
-class Array {
+class Array
+{
 private:
-    int* data;
+    int *data;
     int size;
 
 public:
-    Array(int size) {
+    Array(int size)
+    {
         this->size = size;
         data = new int[size];
     }
 
-    ~Array() {
+    ~Array()
+    {
         delete[] data;
     }
 
-    int getSize() const {
+    int getSize() const
+    {
         return size;
     }
 
-    int& operator[](int index) {
+    int &operator[](int index)
+    {
         return data[index];
     }
 
-    const int& operator[](int index) const {
+    const int &operator[](int index) const
+    {
         return data[index];
     }
 };

@@ -7,17 +7,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 include_directories(include)
 
-add_executable(ArrayTest
-    src/ArrayTest.cpp
-)
-
-add_executable(Average
-    src/Average.cpp
-)
-
-add_executable(RLE
-    src/RLE.cpp
-)
+add_executable(ArrayTest src/ArrayTest.cpp)
+add_executable(Average src/Average.cpp)
+add_executable(RLE src/RLE.cpp)
 
 enable_testing()
 
