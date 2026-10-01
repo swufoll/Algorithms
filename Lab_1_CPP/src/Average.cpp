@@ -1,6 +1,6 @@
 #include <iostream>
 #include <fstream>
-#include "Array.h"
+#include "array.h"
 
 using namespace std;
 
@@ -26,7 +26,11 @@ int main(int argc, char *argv[])
     Array arr(n);
 
     for (int i = 0; i < n; i++)
-        file >> arr[i];
+    {
+        int value;
+        file >> value;
+        arr.set(i, value);
+    }
 
     double positiveSum = 0;
     double negativeSum = 0;
@@ -35,14 +39,16 @@ int main(int argc, char *argv[])
 
     for (int i = 0; i < n; i++)
     {
-        if (arr[i] > 0)
+        int value = arr.get(i);
+
+        if (value > 0)
         {
-            positiveSum += arr[i];
+            positiveSum += value;
             positiveCount++;
         }
-        else if (arr[i] < 0)
+        else if (value < 0)
         {
-            negativeSum += arr[i];
+            negativeSum += value;
             negativeCount++;
         }
     }

@@ -1,6 +1,6 @@
 #include <iostream>
 #include <fstream>
-#include "Array.h"
+#include "array.h"
 
 using namespace std;
 
@@ -26,17 +26,22 @@ int main(int argc, char *argv[])
     Array arr(n);
 
     for (int i = 0; i < n; i++)
-        file >> arr[i];
+    {
+        int value;
+        file >> value;
+        arr.set(i, value);
+    }
 
     for (int i = 0; i < n;)
     {
-        int value = arr[i];
+        int value = arr.get(i);
         int count = 1;
 
-        while (i + count < n && arr[i + count] == value)
+        while (i + count < n && arr.get(i + count) == value)
             count++;
 
         cout << value << " " << count << endl;
+
         i += count;
     }
 }

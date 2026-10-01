@@ -5,11 +5,14 @@ project(ArrayLab)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-include_directories(include)
-
 add_executable(ArrayTest src/ArrayTest.cpp)
+target_link_libraries(ArrayTest LibraryCPPClass)
+
 add_executable(Average src/Average.cpp)
+target_link_libraries(Average LibraryCPPClass)
+
 add_executable(RLE src/RLE.cpp)
+target_link_libraries(RLE LibraryCPPClass)
 
 enable_testing()
 

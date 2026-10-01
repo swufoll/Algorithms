@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Array.h"
+#include "array.h"
 
 using namespace std;
 
@@ -7,17 +7,14 @@ int main()
 {
     Array arr(5);
 
-    arr[0] = 10;
-    arr[1] = 20;
-    arr[2] = 30;
-    arr[3] = 40;
-    arr[4] = 50;
+    for (size_t i = 0; i < arr.size(); i++)
+        arr.set(i, (i + 1) * 10);
 
-    cout << "Array size: " << arr.getSize() << endl;
+    cout << "Array size: " << arr.size() << endl;
     cout << "Array elements: ";
 
-    for (int i = 0; i < arr.getSize(); i++)
-        cout << arr[i] << " ";
+    for (size_t i = 0; i < arr.size(); i++)
+        cout << arr.get(i) << " ";
 
     cout << endl;
 }
