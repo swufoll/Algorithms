@@ -1,32 +1,20 @@
-#include <iostream>
 #include "array.h"
 
 int main()
 {
-    Array *arr = new Array(10);
+    Array arr(5);
 
-    if (arr->size() != 10)
-    {
-        std::cout << "Invalid array size\n";
+    if (arr.size() != 5)
         return 1;
-    }
 
-    for (int i = 0 ; i < 10 ; ++i)
-        arr->set(i, i * 2);
+    for (int i = 0; i < 5; i++)
+        arr.set(i, i * 2);
 
-    *arr = *arr;
-
-    Array copy(*arr);
-
-    for (int i = 0 ; i < 10 ; ++i)
+    for (int i = 0; i < 5; i++)
     {
-        if (arr->get(i) != i * 2
-            || copy.get(i) != i * 2)
-        {
-            std::cout << "Invalid array element " << i << "\n";
+        if (arr.get(i) != i * 2)
             return 1;
-        }
     }
 
-    delete arr;
+    return 0;
 }

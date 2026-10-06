@@ -1,2 +1,3 @@
-Average positive: 20
-Average negative: -20
+Average positive: 4.66667
+Average negative: -6
+

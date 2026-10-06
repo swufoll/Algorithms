@@ -7,18 +7,9 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     if (argc < 2)
-    {
-        cout << "Input file is not specified" << endl;
         return 1;
-    }
 
     ifstream file(argv[1]);
-
-    if (!file.is_open())
-    {
-        cout << "Cannot open input file" << endl;
-        return 1;
-    }
 
     int n;
     file >> n;
@@ -53,13 +44,19 @@ int main(int argc, char *argv[])
         }
     }
 
+    cout << "Average positive: ";
     if (positiveCount > 0)
-        cout << "Average positive: " << positiveSum / positiveCount << endl;
+        cout << positiveSum / positiveCount;
     else
-        cout << "Average positive: N/A" << endl;
+        cout << "N/A";
 
+    cout << endl;
+
+    cout << "Average negative: ";
     if (negativeCount > 0)
-        cout << "Average negative: " << negativeSum / negativeCount << endl;
+        cout << negativeSum / negativeCount;
     else
-        cout << "Average negative: N/A" << endl;
+        cout << "N/A";
+
+    cout << endl;
 }

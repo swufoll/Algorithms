@@ -3,22 +3,20 @@
 
 #include <cstddef>
 
-typedef int Data;
-
 class Array
 {
 public:
     explicit Array(size_t size);
-    Array(const Array &a);
-    Array &operator=(const Array &a);
+    Array(const Array& other);
+    Array& operator=(const Array& other);
     ~Array();
 
-    Data get(size_t index) const;
-    void set(size_t index, Data value);
+    int get(size_t index) const;
+    void set(size_t index, int value);
     size_t size() const;
 
 private:
-    Data *data;
+    int* data;
     size_t length;
 };
 

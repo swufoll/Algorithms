@@ -7,18 +7,9 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     if (argc < 2)
-    {
-        cout << "Input file is not specified" << endl;
         return 1;
-    }
 
     ifstream file(argv[1]);
-
-    if (!file.is_open())
-    {
-        cout << "Cannot open input file" << endl;
-        return 1;
-    }
 
     int n;
     file >> n;
