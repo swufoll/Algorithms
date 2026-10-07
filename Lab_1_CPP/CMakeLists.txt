@@ -1,14 +1,10 @@
-cmake_minimum_required(VERSION 3.20)
-
-project(Lab_1_CPP)
-
 add_executable(Average src/Average.cpp)
 target_link_libraries(Average LibraryCPPClass)
+target_include_directories(Average PRIVATE ${CMAKE_SOURCE_DIR}/LibraryCPPClass)
 
 add_executable(RLE src/RLE.cpp)
 target_link_libraries(RLE LibraryCPPClass)
-
-enable_testing()
+target_include_directories(RLE PRIVATE ${CMAKE_SOURCE_DIR}/LibraryCPPClass)
 
 add_test(
     NAME AverageTest1
