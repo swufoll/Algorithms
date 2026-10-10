@@ -3,32 +3,32 @@
 Array::Array(size_t size)
 {
     length = size;
-    data = new int[size];
+    data = new Data[size];
 }
 
-Array::Array(const Array& other)
+Array::Array(const Array &a)
 {
-    length = other.length;
-    data = new int[length];
+    length = a.length;
+    data = new Data[length];
 
     for (size_t i = 0; i < length; i++)
-        data[i] = other.data[i];
+        data[i] = a.data[i];
 }
 
-Array& Array::operator=(const Array& other)
+Array &Array::operator=(const Array &a)
 {
-    if (this == &other)
+    if (this == &a)
         return *this;
 
-    int* newData = new int[other.length];
+    Data *newData = new Data[a.length];
 
-    for (size_t i = 0; i < other.length; i++)
-        newData[i] = other.data[i];
+    for (size_t i = 0; i < a.length; i++)
+        newData[i] = a.data[i];
 
     delete[] data;
 
     data = newData;
-    length = other.length;
+    length = a.length;
 
     return *this;
 }
@@ -38,12 +38,12 @@ Array::~Array()
     delete[] data;
 }
 
-int Array::get(size_t index) const
+Data Array::get(size_t index) const
 {
     return data[index];
 }
 
-void Array::set(size_t index, int value)
+void Array::set(size_t index, Data value)
 {
     data[index] = value;
 }
